@@ -266,11 +266,16 @@ const VideoShowcaseSection = () => {
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 40, scale: 0.98 }} animate={controls} variants={{ visible: { opacity: 1, y: 0, scale: 1 } }} transition={{ duration: 0.8, delay: 0.2 }} className="relative">
           <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/10 via-transparent to-amber-500/10 rounded-3xl blur-xl" />
-          <div className="relative z-10 bg-[#1F2937] rounded-2xl border border-gray-700/30 aspect-video flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-cyan-600/20 rounded-full flex items-center justify-center mx-auto mb-4"><Play className="w-10 h-10 text-cyan-400" /></div>
-              <p className="text-gray-400">Video institucional AcreMining</p>
-            </div>
+          <div className="relative z-10 rounded-2xl overflow-hidden border border-gray-700/30 aspect-video bg-black">
+            <video
+              className="w-full h-full object-cover"
+              controls
+              playsInline
+              preload="metadata"
+            >
+              <source src="/acremining-video.mp4" type="video/mp4" />
+              Tu navegador no soporta video HTML5.
+            </video>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mt-10">
             {[
